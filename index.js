@@ -9,6 +9,12 @@ module.exports = function isExactly (value, other) {
         return true;
     }
 
+    // If they're not both objects, we can't go any deeper, so just use the
+    // === operator
+    if (typeof value !== 'object' && typeof other !== 'object') {
+        return value === other;
+    }
+
     // Get the keys from the two objects
     var vKeys = keys(value);
     var oKeys = keys(other);
