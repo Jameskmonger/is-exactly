@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Jameskmonger/is-exactly#readme",
   "devDependencies": {
     "modunit": "^0.2.1"
+  },
+  "dependencies": {
+    "object-keys": "^1.0.9"
   }
 }
