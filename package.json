@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "James Monger <jameskmonger@hotmail.co.uk> (http://jamesmonger.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jameskmonger/is-exactly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jameskmonger/is-exactly/issues"
+  },
+  "homepage": "https://github.com/Jameskmonger/is-exactly#readme",
 }
