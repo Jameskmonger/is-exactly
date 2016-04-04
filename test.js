@@ -20,3 +20,7 @@ test('it returns true when given the same boolean twice', (t, value) => {
 }, [
     [true], [false]
 ]);
+
+test('it returns true when given null twice', t => {
+    t.assert.true(isExactly(null, null));
+});
