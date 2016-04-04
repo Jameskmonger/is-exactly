@@ -133,3 +133,84 @@ test('it returns true for objects with same level 1, same level 2', (t, value) =
          }
      ]
 ]);
+
+test('it returns false for objects with same level 1, same level 2, different level 3', (t, value, other) => {
+    t.assert.false(isExactly(value, other));
+}, [
+     [
+         {
+             name: 'james',
+             birthday: {
+                 month: 9,
+                 day: 17,
+                 time: {
+                     hours: 15,
+                     minutes: 30
+                 }
+             }
+         },
+         {
+             name: 'james',
+             birthday: {
+                 month: 9,
+                 day: 17,
+                 time: {
+                     hours: 20,
+                     minutes: 0
+                 }
+             }
+         }
+     ],
+     [
+         {
+             car: {
+                 make: 'Citroen',
+                 model: 'Saxo',
+                 engine: {
+                     displacement: '1600'
+                 }
+             },
+             color: 'red'
+         },
+         {
+             car: {
+                 make: 'Peugeot',
+                 model: '106',
+                 engine: {
+                     displacement: '1400'
+                 }
+             },
+             color: 'blue'
+         }
+     ]
+]);
+
+test('it returns true for objects with same level 1, same level 2, same level 3', (t, value) => {
+    t.assert.true(isExactly(value, value));
+}, [
+    [
+        {
+            name: 'james',
+            birthday: {
+                month: 9,
+                day: 17,
+                time: {
+                    hours: 15,
+                    minutes: 30
+                }
+            }
+        }
+    ],
+    [
+        {
+            car: {
+                make: 'Citroen',
+                model: 'Saxo',
+                engine: {
+                    displacement: '1600'
+                }
+            },
+            color: 'red'
+        }
+    ]
+]);
