@@ -2,6 +2,9 @@
   "name": "is-exactly",
   "version": "1.0.1",
   "description": "Test the exact equality of two objects.",
+  "keywords": [
+    "equal", "deep", "recursive", "strict"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "modunit test.js"
