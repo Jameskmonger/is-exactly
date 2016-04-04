@@ -48,3 +48,12 @@ test('it returns false when given the same number but stringified', (t, value, o
     [20, '20'],
     [Infinity, 'Infinity']
 ]);
+
+test('it returns true when given the same object twice', (t, value) => {
+    t.assert.true(isExactly(value, value));
+}, [
+    [{ a : [ 2, 3 ], b : [ 4 ] }],
+    [{ name: 'James', country: 'UK' }],
+    [{ name: 'apple', flavour: 'fruity' }],
+    [{ species: 'cat', texture: 'furry' }]
+])
