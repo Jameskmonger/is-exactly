@@ -15,6 +15,16 @@ test('it returns true when given the same string twice', (t, value) => {
     ['james'], ['bob'], ['cats'], ['apples'], ['cheese and melon']
 ]);
 
+test('it returns true when given the same string but concatenated', (t, value, other) => {
+    t.assert.true(isExactly(value, other));
+}, [
+    ['james', ('j' + 'a' + 'mes')],
+    ['bob', ('b' + 'o' + 'b')],
+    ['cats', ('c' + 'at' + 's')],
+    ['apples', ('a' + 'pp' + 'le' + 's')],
+    ['cheese and melon', 'cheese ' + 'and' + ' melon']
+]);
+
 test('it returns true when given the same boolean twice', (t, value) => {
     t.assert.true(isExactly(value, value));
 }, [
