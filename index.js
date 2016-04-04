@@ -28,4 +28,16 @@ module.exports = function isExactly (value, other) {
             return false;
         }
     }
+
+    for (var i = 0; i < vKeys.length; i++) {
+        // We can get the key from the either list as we know at this point that they are the same
+        var key = vKeys[i];
+
+        // Do a deep check on the next level
+        if (isExactly(value[key], other[key]) === false) {
+            return false;
+        }
+    }
+
+    return true;
 };
