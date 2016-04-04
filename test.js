@@ -57,3 +57,11 @@ test('it returns true when given the same object twice', (t, value) => {
     [{ name: 'apple', flavour: 'fruity' }],
     [{ species: 'cat', texture: 'furry' }]
 ]);
+
+test('it returns false for objects with different keys, same count', (t, value, other) => {
+    t.assert.false(isExactly(value, other));
+}, [
+    [ { a: 1, b: 2 }, { a: 1, c: 2 } ],
+    [ { name: 'james', age: 15 }, { name: 'james', height: 170 } ],
+    [ { fruit: 'apple', color: 'green' }, { fruit: 'grapefruit', size: 'large' } ]
+]);
