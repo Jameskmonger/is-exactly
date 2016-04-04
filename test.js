@@ -14,3 +14,9 @@ test('it returns true when given the same string twice', (t, value) => {
 }, [
     ['james'], ['bob'], ['cats'], ['apples'], ['cheese and melon']
 ]);
+
+test('it returns true when given the same boolean twice', (t, value) => {
+    t.assert.true(isExactly(value, value));
+}, [
+    [true], [false]
+]);
