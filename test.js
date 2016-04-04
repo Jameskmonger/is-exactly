@@ -28,3 +28,13 @@ test('it returns true when given null twice', t => {
 test('it returns true when given undefined twice', t => {
     t.assert.true(isExactly(undefined, undefined));
 });
+
+test('it returns false when given the same number but stringified', (t, value, other) => {
+    t.assert.true(isExactly(value, other));
+}, [
+    [3, '3'],
+    [4, '4'],
+    [10, '10'],
+    [20, '20'],
+    [Infinity, 'Infinity']
+]);
