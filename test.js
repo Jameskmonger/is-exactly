@@ -56,4 +56,4 @@ test('it returns true when given the same object twice', (t, value) => {
     [{ name: 'James', country: 'UK' }],
     [{ name: 'apple', flavour: 'fruity' }],
     [{ species: 'cat', texture: 'furry' }]
-])
+]);
