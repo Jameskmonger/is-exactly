@@ -65,3 +65,11 @@ test('it returns false for objects with different keys, same count', (t, value, 
     [ { name: 'james', age: 15 }, { name: 'james', height: 170 } ],
     [ { fruit: 'apple', color: 'green' }, { fruit: 'grapefruit', size: 'large' } ]
 ]);
+
+test('it returns false for objects with different key count', (t, value, other) => {
+    t.assert.false(isExactly(value, other));
+}, [
+    [ { a: 1, b: 2 }, { a: 1 } ],
+    [ { name: 'james', age: 15 }, { name: 'james' } ],
+    [ { fruit: 'apple', color: 'green' }, { fruit: 'grapefruit' } ]
+]);
