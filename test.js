@@ -73,3 +73,40 @@ test('it returns false for objects with different key count', (t, value, other) 
     [ { name: 'james', age: 15 }, { name: 'james' } ],
     [ { fruit: 'apple', color: 'green' }, { fruit: 'grapefruit' } ]
 ]);
+
+test('it returns false for objects with same level 1, different level 2', (t, value, other) => {
+    t.assert.false(isExactly(value, other));
+}, [
+     [
+         {
+             name: 'james',
+             birthday: {
+                 month: 9,
+                 day: 17
+             }
+         },
+         {
+             name: 'james',
+             birthday: {
+                 month: 10,
+                 day: 15
+             }
+         }
+     ],
+     [
+         {
+             car: {
+                 make: 'Citroen',
+                 model: 'Saxo'
+             },
+             color: 'red'
+         },
+         {
+             car: {
+                 make: 'Peugeot',
+                 model: '106'
+             },
+             color: 'blue'
+         }
+     ]
+]);
