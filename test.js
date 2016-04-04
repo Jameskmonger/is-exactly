@@ -111,7 +111,7 @@ test('it returns false for objects with same level 1, different level 2', (t, va
      ]
 ]);
 
-test('it returns false for objects with same level 1, same level 2', (t, value) => {
+test('it returns true for objects with same level 1, same level 2', (t, value) => {
     t.assert.true(isExactly(value, value));
 }, [
      [
