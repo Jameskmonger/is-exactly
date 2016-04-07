@@ -9,6 +9,11 @@ module.exports = function isExactly (value, other) {
         return true;
     }
 
+    // If either is null or undefined, then === is sufficient
+    if (value === null || value === undefined || other === null || other === undefined) {
+        return value === other;
+    }
+
     // If they're not both objects, we can't go any deeper, so just use the
     // === operator
     if (typeof value !== 'object' && typeof other !== 'object') {
