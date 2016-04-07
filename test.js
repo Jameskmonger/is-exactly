@@ -15,6 +15,12 @@ test('it returns false when given undefined and a string', (t, string) => {
     ['james'], ['bob'], ['cats'], ['apples'], ['cheese and melon']
 ]);
 
+test('it returns false when given null and a number', (t, number) => {
+    t.assert.false(isExactly(null, number));
+}, [
+    [3], [4], [10], [20], [Infinity]
+]);
+
 test('it returns true when given the same number twice', (t, value) => {
     t.assert.true(isExactly(value, value));
 }, [
