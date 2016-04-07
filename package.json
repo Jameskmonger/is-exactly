@@ -26,6 +26,9 @@
     "modunit": "^0.2.1",
     "tap-heart": "^0.2.0"
   },
+  "modunit": {
+      "reporter": "tap-heart"
+  },
   "dependencies": {
     "object-keys": "^1.0.9"
   }
