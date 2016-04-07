@@ -3,6 +3,12 @@
 const test = require('modunit');
 const isExactly = require('./index');
 
+test('it returns false when given undefined and a number', (t, number) => {
+    t.assert.false(isExactly(undefined, number));
+}, [
+    [3], [4], [10], [20], [Infinity]
+]);
+
 test('it returns true when given the same number twice', (t, value) => {
     t.assert.true(isExactly(value, value));
 }, [
